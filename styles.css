@@ -721,6 +721,71 @@ h3 {
   padding-inline: 32px;
 }
 
+/* ─────────────────────────── 환불 정책 ─────────────────────────── */
+.policy-card {
+  margin: 48px auto 0;
+  max-width: 760px;
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: 12px 24px;
+}
+@media (min-width: 640px) {
+  .policy-card {
+    padding: 16px 40px;
+  }
+}
+.policy-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: policy;
+}
+.policy-list li {
+  counter-increment: policy;
+  position: relative;
+  padding: 24px 0 24px 52px;
+}
+.policy-list li + li {
+  border-top: 1px solid var(--hairline);
+}
+.policy-list li::before {
+  content: counter(policy);
+  position: absolute;
+  left: 0;
+  top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: var(--primary-tint);
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 800;
+}
+.policy-list h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+.policy-list p {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.policy-contact {
+  border-top: 1px solid var(--hairline);
+  padding-block: 20px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+.policy-contact a {
+  font-weight: 700;
+  color: var(--primary);
+}
+
 /* ─────────────────────────── 푸터 ─────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--hairline);
@@ -758,8 +823,29 @@ h3 {
 .footer-nav a:hover {
   color: var(--ink);
 }
-.footer-bottom {
+.footer-biz {
   margin-top: 40px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 24px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.footer-biz p {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+.footer-biz b {
+  font-weight: 600;
+  color: var(--subtle);
+  margin-right: 6px;
+}
+.footer-biz a:hover {
+  color: var(--ink);
+}
+.footer-bottom {
+  margin-top: 24px;
   border-top: 1px solid var(--hairline);
   padding-top: 24px;
   font-size: 12px;
